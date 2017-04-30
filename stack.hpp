@@ -12,19 +12,58 @@
 template<typename T>
 using Stack = std::stack<T>;*/
 
+template <class T> struct Node{
+	T data;
+	T *nextPtr;
+};
+
 template <class T> class Stack{
 	private:
-		struct Node{
-			T data;
-			T *nextPtr;
-		};
-		struct Node *top;
 		int stackSize;
-
+		Node<T> *top;
 	public:
 		Stack(){
 			top = nullptr;
 			stackSize = 0;
+		}
+
+		Stack(const Stack &obj){
+			if(obj.top == nullptr){
+				top = nullptr;
+			}
+			else{
+				Node *ptr = obj.top;
+				while(ptr != nullptr){
+					push_front(ptr->data);
+					ptr = ptr->nextPtr;
+				}
+			}
+		}
+
+		void push_front(T value){
+			// Increase the stack size by 1
+			stackSize++;
+
+			// Create a new node
+			Node<T> *newNode = new Node<T>;
+
+			// Assign data to the value and pushed to the top of stack
+			newNode->data = value;
+			newNode->nextPtr = top;
+
+			// Change the top of the stack pointer
+			top = newNode;
+		}
+
+		void pop(){
+			if(isEmpty()){
+				return;
+			}
+			else{
+				Node<T> *temp = top;
+				top = top->nextPtr;
+				delete(temp);
+			}
 		}
 
 		bool isEmpty(){
@@ -40,7 +79,7 @@ template <class T> class Stack{
 			return stackSize;
 		}
 
-		template<class T> top(){
+		template<typename T> top(){
 			return top->data;
 		}
 
@@ -48,17 +87,8 @@ template <class T> class Stack{
 			return top;
 		}
 
-		void push_front(T value){
-			stackSize++;
+};
 
-			struct Node *newNode;
-			newNode = new Node;
 
-			newNode->data = value;
-			newNode->nextPtr = nullptr;
-
-			if()
-		}
-}
 
 #endif

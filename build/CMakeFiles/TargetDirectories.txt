@@ -1,0 +1,3 @@
+/home/orion/Documents/code/cs2/VirtualMachineProject/build/CMakeFiles/edit_cache.dir
+/home/orion/Documents/code/cs2/VirtualMachineProject/build/CMakeFiles/rebuild_cache.dir
+/home/orion/Documents/code/cs2/VirtualMachineProject/build/CMakeFiles/machine.cpp.dir
