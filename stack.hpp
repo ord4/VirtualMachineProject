@@ -22,11 +22,13 @@ template <class T> class Stack{
 		int stackSize;
 		Node<T> *top;
 	public:
+		// Default Constructor
 		Stack(){
 			top = nullptr;
 			stackSize = 0;
 		}
 
+		// Copy Constructor
 		Stack(const Stack &obj){
 			if(obj.top == nullptr){
 				top = nullptr;
