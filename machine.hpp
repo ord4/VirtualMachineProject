@@ -7,7 +7,6 @@
 #ifndef MACHINE_HPP
 #define MACHINE_HPP
 
-#include "test.hpp"
 #include "string.hpp"
 #include "vector.hpp"
 #include "stack.hpp"

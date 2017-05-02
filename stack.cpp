@@ -3,7 +3,6 @@
 	The University of Akron
 	Computer Science II, Prof. Will
 	Project 2: Virtual Machine
-*/
 #include "stack.hpp"
 
 // Default constructor
@@ -25,3 +24,4 @@ Stack::Stack(const Stack &obj){
 		}
 	}
 }
+*/

@@ -7,7 +7,6 @@
 #ifndef VECTOR_HPP
 #define VECTOR_HPP
 
-#include "test.hpp"
 
 /*#include <vector>
 template<typename T>
@@ -17,7 +16,7 @@ template <class T> class Vec{
 	public:
 		using iterator = T*;
 		using const_iterator = const T*;
-		using size_type = size_t;
+		//using size_type = size_t;
 		using value_type = T;
 
 		Vec(){
