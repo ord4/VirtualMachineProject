@@ -7,20 +7,34 @@
 #ifndef VECTOR_HPP
 #define VECTOR_HPP
 
-
 /*#include <vector>
 template<typename T>
 using Vector = std::vector<T>;*/
+#include <stdio.h>
+
+template <class T> class allocator{
+public:
+	T* allocate(size_t);
+	void deallocate(T*, size_t);
+	void construct(T*, const T&);
+	void destroy(T*);
+};
+
+template <class Out, class T>
+void unitialized_fill(Out, Out, const T&);
+
+template <class In, class Out>
+Out uninitialized_copy(In, In, Out);
 
 template <class T> class Vec{
 	public:
 		using iterator = T*;
 		using const_iterator = const T*;
-		//using size_type = size_t;
+		using size_type = size_t;
 		using value_type = T;
 
 		Vec(){
-			create();
+			this->create();
 		}
 
 		explicit Vec(size_type n, const T& val = T()){
@@ -33,7 +47,7 @@ template <class T> class Vec{
 
 		Vec& operator=(const Vec&);
 		~Vec(){
-			uncreate();
+			this->uncreate();
 		}
 
 		T& operator[](size_type i){
@@ -46,7 +60,7 @@ template <class T> class Vec{
 
 		void push_back(const T& t){
 			if(avail == limit){
-				grow();
+				this->grow();
 			}
 			unchecked_append(t);
 		}
@@ -68,17 +82,24 @@ template <class T> class Vec{
 		const_iterator end() const{
 			return avail;
 		}
+		void create();
+		void create(Vec<T>::size_type, const T&);
+		void create(Vec<T>::const_iterator, Vec<T>::const_iterator);
+		void uncreate();
+		void grow();
+		void unchecked_append(const T&);
 
 	private:
 		iterator data;
 		iterator avail;
 		iterator limit;
+		allocator<T> alloc(size_type);
 };
 
-template < class T>
+template <class T>
 Vec<T>& Vec<T>::operator=(const Vec &rhs){
 	if(&rhs != this){
-		uncreate();
+		this->uncreate();
 		create(rhs.begin(), rhs.end());
 	}
 	return *this;
@@ -116,7 +137,7 @@ void Vec<T>::uncreate(){
 
 template <class T>
 void Vec<T>::grow(){
-	size_type new_size = max(2 * (limit - data), ptrdiff_t(1));
+	size_type new_size = max(2 * (limit - data), this->ptrdiff_t(1));
 	iterator new_data = alloc.allocate(new_size);
 	iterator new_avail = uninitialized_copy(data, avail, new_data);
 	uncreate();
@@ -130,19 +151,5 @@ void Vec<T>::unchecked_append(const T& val){
 	alloc.construct(avail++, val);
 }
 
-
-template <class T> allocator{
-	public:
-		T* allocate(size_t);
-		void deallocate(T*, size_t);
-		void construct(T*, const T&);
-		void destroy(T*);
-};
-
-template <class Out, class T>
-void unitialized_fill(Out, Out, const T&);
-
-template <class In, class Out>
-Out uninitialized_copy(In, In, Out);
 
 #endif
