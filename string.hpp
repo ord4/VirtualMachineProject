@@ -44,13 +44,36 @@ class myString{
 
 		// Functions
 		int size();
-		myString& operator=(const myString&);
-		friend myString operator+(const myString&, const myString&);
-		friend myString operator+(const myString&, char);
-		friend myString operator+(char, const myString&);
-		friend std::ostream& operator<<(std::ostream&, const myString&);
-		char& operator[](int);
 };
+
+// Overloaded operators
+std::ostream& operator<<(std::ostream&, const myString&);
+
+myString& operator=(const myString&);
+
+char& operator[](int);
+
+myString operator+(const myString&, const myString&);
+myString operator+(const myString&, char);
+myString operator+(char, const myString&);
+
+bool operator==(const myString&, const myString&);
+bool operator==(const myString&, const char&);
+bool operator==(const char&, const myString&);
+
+bool operator!=(const myString&, const myString&);
+bool operator!=(const myString&, const char&);
+bool operator!=(const char&, const myString&);
+
+bool operator<(const myString&, const myString&);
+bool operator<(const myString&, const char&);
+bool operator<(const char&, const myString&);
+
+bool operator>(const myString&, const myString&);
+bool operator>(const myString&, const char&);
+bool operator>(const char&, const myString&);
+
+
 
 myString::myString(){
 	length = 0;
@@ -77,7 +100,14 @@ int myString::size(){
 	return length;
 }
 
-myString& myString::operator=(const myString& obj){
+std::ostream& operator<<(std::ostream &os, const myString &obj){
+	for(int i = 0; i < obj.length; ++i){
+		os.put(obj.myStr[i]);
+	}
+	return os;
+}
+
+myString& operator=(const myString& obj){
 	if(this != &obj){
 		delete [] myStr;
 		length = obj.length;
@@ -87,7 +117,7 @@ myString& myString::operator=(const myString& obj){
 	return *this;
 }
 
-char& myString::operator[](int index){
+char& operator[](int index){
 	if(index < 0 || index > length){
 		std::cout << "Trying to access item out of bounds.\n";
 		exit(-1);
@@ -95,7 +125,7 @@ char& myString::operator[](int index){
 	return myStr[index];
 }
 
-myString myString::operator+(const myString &left, const myString &right){
+myString operator+(const myString &left, const myString &right){
 	myString newString;
 	newString.length = left.length + right.length;
 	newString.myStr = new char[newString.length];
@@ -103,8 +133,7 @@ myString myString::operator+(const myString &left, const myString &right){
 	stringCopy(newString.myStr + left.length, right.myStr, right.length);
 	return newString;
 }
-
-myString myString::operator+(const myString &left, char right){
+myString operator+(const myString &left, char right){
 	myString newString;
 	newString.length = left.length + 1; // Should this be 2 for '\0'?
 	newString.myStr = new char[newString.length];
@@ -112,8 +141,7 @@ myString myString::operator+(const myString &left, char right){
 	stringCopy(newString.myStr + left.length, right, 1);
 	return newString;
 }
-
-myString myString::operator+(char left, myString &right){
+myString operator+(char left, myString &right){
 	myString newString;
 	newString.length = 1 + right.length;
 	newString.myStr = new char[newString.length];
@@ -121,11 +149,27 @@ myString myString::operator+(char left, myString &right){
 	stringCopy(newString.myStr + 1, right.myStr, right.length);
 }
 
-std::ostream& myString::operator<<(std::ostream &os, const myString &obj){
-	for(int i = 0; i < obj.length; ++i){
-		os.put(obj.myStr[i]);
+bool operator==(const myString &left, const myString &right){
+	if(left.length != right.length){
+		return false;
 	}
-	return os;
+	else{
+		int i = 0;
+		for(int i = 0; i < left.length; ++i){
+			if(left[i] != right[i]){
+				return false;
+			}
+		}
+		return true;
+	}
 }
+bool operator==(const myString &left, const char &right){
+	return left.myStr == right; // I don't think this is correct
+}
+bool operator==(const char &left, const myString &right){
+	return left == right.myStr;
+}
+
+
 
 #endif
