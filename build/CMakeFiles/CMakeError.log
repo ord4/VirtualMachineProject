@@ -6,3 +6,11 @@ Run Build Command:"/usr/bin/gmake" "cmTC_7839a/fast"
 Generator: execution of make failed. Make command was: "/usr/bin/gmake" "cmTC_7839a/fast"
 
 
+Determining if the CXX compiler works failed with the following output:
+Change Dir: /home/orion/Documents/code/cs2/VirtualMachineProject/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"/usr/bin/gmake" "cmTC_e164d/fast"
+
+Generator: execution of make failed. Make command was: "/usr/bin/gmake" "cmTC_e164d/fast"
+
+
