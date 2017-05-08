@@ -33,19 +33,7 @@ class Stack{
 		void pop();
 };
 
-// Assignment operator
-Stack& operator=(const Stack &rhs){
-	if(this == &rhs){
-		return *this;
-	}
-	else{
-		// Copy over elements somehow
-
-		}
-
-		return *this;
-	}
-}
+Stack& operator=(const Stack &rhs){}
 
 template <class T>
 Stack<T>::Stack(){
@@ -53,9 +41,7 @@ Stack<T>::Stack(){
 }
 
 template <class T>
-Stack Stack<T>::Stack(const Stack &obj){
-	
-}
+Stack Stack<T>::Stack(const Stack &obj){}
 
 template <class T>
 bool Stack<T>::empty(){
