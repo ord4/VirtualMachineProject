@@ -142,7 +142,7 @@ Machine::fetch()
 int
 Machine::top() const
 {
-  // TODO: Implement me!
+  stack.top();
   throw std::logic_error("not implemented");
 }
 
@@ -150,7 +150,7 @@ Machine::top() const
 void
 Machine::push(int n)
 {
-  // TODO: Implement me!
+	stack.push_front(n);
   throw std::logic_error("not implemented");
 }
 
@@ -158,7 +158,7 @@ Machine::push(int n)
 int
 Machine::pop()
 {
-  // TODO: Implement me!
+	stack.pop();
   throw std::logic_error("not implemented");
 }
 
@@ -166,7 +166,7 @@ Machine::pop()
 void
 Machine::copy()
 {
-  // TODO: Implement me!
+  stack.push_front(stack.returnTop());
   throw std::logic_error("not implemented");
 }
 
@@ -174,7 +174,14 @@ Machine::copy()
 void
 Machine::add()
 {
-  // TODO: Implement me!
+	int num, sum;
+
+   stack.pop(sum);
+   stack.pop(num);
+   sum += num;
+
+   // Push sum back onto the stack.
+   stack.push_front(sum);
   throw std::logic_error("not implemented");
 }
 

@@ -57,33 +57,9 @@ include CMakeFiles/machine.cpp.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/machine.cpp.dir/flags.make
 
-CMakeFiles/machine.cpp.dir/stack.cpp.o: CMakeFiles/machine.cpp.dir/flags.make
-CMakeFiles/machine.cpp.dir/stack.cpp.o: ../stack.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/orion/Documents/code/cs2/VirtualMachineProject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/machine.cpp.dir/stack.cpp.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/machine.cpp.dir/stack.cpp.o -c /home/orion/Documents/code/cs2/VirtualMachineProject/stack.cpp
-
-CMakeFiles/machine.cpp.dir/stack.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/machine.cpp.dir/stack.cpp.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/orion/Documents/code/cs2/VirtualMachineProject/stack.cpp > CMakeFiles/machine.cpp.dir/stack.cpp.i
-
-CMakeFiles/machine.cpp.dir/stack.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/machine.cpp.dir/stack.cpp.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/orion/Documents/code/cs2/VirtualMachineProject/stack.cpp -o CMakeFiles/machine.cpp.dir/stack.cpp.s
-
-CMakeFiles/machine.cpp.dir/stack.cpp.o.requires:
-
-.PHONY : CMakeFiles/machine.cpp.dir/stack.cpp.o.requires
-
-CMakeFiles/machine.cpp.dir/stack.cpp.o.provides: CMakeFiles/machine.cpp.dir/stack.cpp.o.requires
-	$(MAKE) -f CMakeFiles/machine.cpp.dir/build.make CMakeFiles/machine.cpp.dir/stack.cpp.o.provides.build
-.PHONY : CMakeFiles/machine.cpp.dir/stack.cpp.o.provides
-
-CMakeFiles/machine.cpp.dir/stack.cpp.o.provides.build: CMakeFiles/machine.cpp.dir/stack.cpp.o
-
-
 CMakeFiles/machine.cpp.dir/string.cpp.o: CMakeFiles/machine.cpp.dir/flags.make
 CMakeFiles/machine.cpp.dir/string.cpp.o: ../string.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/orion/Documents/code/cs2/VirtualMachineProject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/machine.cpp.dir/string.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/orion/Documents/code/cs2/VirtualMachineProject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/machine.cpp.dir/string.cpp.o"
 	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/machine.cpp.dir/string.cpp.o -c /home/orion/Documents/code/cs2/VirtualMachineProject/string.cpp
 
 CMakeFiles/machine.cpp.dir/string.cpp.i: cmake_force
@@ -103,6 +79,30 @@ CMakeFiles/machine.cpp.dir/string.cpp.o.provides: CMakeFiles/machine.cpp.dir/str
 .PHONY : CMakeFiles/machine.cpp.dir/string.cpp.o.provides
 
 CMakeFiles/machine.cpp.dir/string.cpp.o.provides.build: CMakeFiles/machine.cpp.dir/string.cpp.o
+
+
+CMakeFiles/machine.cpp.dir/stack.cpp.o: CMakeFiles/machine.cpp.dir/flags.make
+CMakeFiles/machine.cpp.dir/stack.cpp.o: ../stack.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/orion/Documents/code/cs2/VirtualMachineProject/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/machine.cpp.dir/stack.cpp.o"
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/machine.cpp.dir/stack.cpp.o -c /home/orion/Documents/code/cs2/VirtualMachineProject/stack.cpp
+
+CMakeFiles/machine.cpp.dir/stack.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/machine.cpp.dir/stack.cpp.i"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/orion/Documents/code/cs2/VirtualMachineProject/stack.cpp > CMakeFiles/machine.cpp.dir/stack.cpp.i
+
+CMakeFiles/machine.cpp.dir/stack.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/machine.cpp.dir/stack.cpp.s"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/orion/Documents/code/cs2/VirtualMachineProject/stack.cpp -o CMakeFiles/machine.cpp.dir/stack.cpp.s
+
+CMakeFiles/machine.cpp.dir/stack.cpp.o.requires:
+
+.PHONY : CMakeFiles/machine.cpp.dir/stack.cpp.o.requires
+
+CMakeFiles/machine.cpp.dir/stack.cpp.o.provides: CMakeFiles/machine.cpp.dir/stack.cpp.o.requires
+	$(MAKE) -f CMakeFiles/machine.cpp.dir/build.make CMakeFiles/machine.cpp.dir/stack.cpp.o.provides.build
+.PHONY : CMakeFiles/machine.cpp.dir/stack.cpp.o.provides
+
+CMakeFiles/machine.cpp.dir/stack.cpp.o.provides.build: CMakeFiles/machine.cpp.dir/stack.cpp.o
 
 
 CMakeFiles/machine.cpp.dir/vector.cpp.o: CMakeFiles/machine.cpp.dir/flags.make
@@ -131,15 +131,15 @@ CMakeFiles/machine.cpp.dir/vector.cpp.o.provides.build: CMakeFiles/machine.cpp.d
 
 # Object files for target machine.cpp
 machine_cpp_OBJECTS = \
-"CMakeFiles/machine.cpp.dir/stack.cpp.o" \
 "CMakeFiles/machine.cpp.dir/string.cpp.o" \
+"CMakeFiles/machine.cpp.dir/stack.cpp.o" \
 "CMakeFiles/machine.cpp.dir/vector.cpp.o"
 
 # External object files for target machine.cpp
 machine_cpp_EXTERNAL_OBJECTS =
 
-machine.cpp: CMakeFiles/machine.cpp.dir/stack.cpp.o
 machine.cpp: CMakeFiles/machine.cpp.dir/string.cpp.o
+machine.cpp: CMakeFiles/machine.cpp.dir/stack.cpp.o
 machine.cpp: CMakeFiles/machine.cpp.dir/vector.cpp.o
 machine.cpp: CMakeFiles/machine.cpp.dir/build.make
 machine.cpp: CMakeFiles/machine.cpp.dir/link.txt
@@ -151,8 +151,8 @@ CMakeFiles/machine.cpp.dir/build: machine.cpp
 
 .PHONY : CMakeFiles/machine.cpp.dir/build
 
-CMakeFiles/machine.cpp.dir/requires: CMakeFiles/machine.cpp.dir/stack.cpp.o.requires
 CMakeFiles/machine.cpp.dir/requires: CMakeFiles/machine.cpp.dir/string.cpp.o.requires
+CMakeFiles/machine.cpp.dir/requires: CMakeFiles/machine.cpp.dir/stack.cpp.o.requires
 CMakeFiles/machine.cpp.dir/requires: CMakeFiles/machine.cpp.dir/vector.cpp.o.requires
 
 .PHONY : CMakeFiles/machine.cpp.dir/requires

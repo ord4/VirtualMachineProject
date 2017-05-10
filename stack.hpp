@@ -7,33 +7,36 @@
 #ifndef STACK_HPP
 #define STACK_HPP
 
+#include <stdio.h>
+#include <stdlib.h>
+
 template<class T>
 struct Node{
 	T data;
-	Node *nextPtr;
+	Node<T> *nextPtr;
 };
 
 template <class T>
 class Stack{
 	private:
 		std::size_t stackSize;
-		Node *top;
+		Node<T> *top;
 
 	public:
 		// Constructors
 		Stack();
-		Stack Stack(const Stack&);
+		Stack(const Stack&);
 
 		// Functions
 		bool empty();
 		std::size_t size();
-		T top();
-		T& top();
+		T returnTop();
 		void push_front(T);
-		void pop();
+		void pop(T&);
 };
 
-Stack& operator=(const Stack &rhs){}
+//template <class T>
+//Stack<T>& operator=(const Stack<T> &rhs){}
 
 template <class T>
 Stack<T>::Stack(){
@@ -41,7 +44,7 @@ Stack<T>::Stack(){
 }
 
 template <class T>
-Stack Stack<T>::Stack(const Stack &obj){}
+Stack<T>::Stack(const Stack<T> &obj){}
 
 template <class T>
 bool Stack<T>::empty(){
@@ -59,13 +62,8 @@ std::size_t Stack<T>::size(){
 }
 
 template <class T>
-T Stack<T>::top(){
+T Stack<T>::returnTop(){
 	return *top;
-}
-
-template <class T>
-T& Stack<T>::top(){
-	return top;
 }
 
 template <class T>
@@ -81,9 +79,10 @@ void Stack<T>::push_front(T val){
 }
 
 template <class T>
-void Stack<T>::pop(){
+void Stack<T>::pop(T &num){
 	if(!empty()){
 		Node<T> *tempNode = top;
+		num = *top;
 
 		top = top->nextPtr;
 

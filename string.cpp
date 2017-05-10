@@ -5,5 +5,3 @@
 	Project 2: Virtual Machine
 */
 #include "string.hpp"
-
-#include <iostream>

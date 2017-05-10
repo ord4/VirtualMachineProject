@@ -12,12 +12,12 @@ project(main CXX)
 # version of the language, C++03. GCC-4.9, the default compiler in
 # our labs works with this setting. So does the default compiler on
 # an up-to-date Mac OS X system.
-#set(CMAKE_CXX_FLAGS -std=c++14)
+set(CMAKE_CXX_FLAGS -std=c++14)
 
 
 # Declare that we want to build an executable program named "hello".
 # This will produce an executable program with that
-add_executable(machine.cpp stack.cpp string.cpp vector.cpp)
+add_executable(machine.cpp string.cpp stack.cpp vector.cpp)
 
 
 # DO NOT REMOVE OR MODIFY THIS MACRO.

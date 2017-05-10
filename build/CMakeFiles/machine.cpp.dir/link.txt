@@ -1,1 +1,1 @@
-/usr/bin/c++      CMakeFiles/machine.cpp.dir/stack.cpp.o CMakeFiles/machine.cpp.dir/string.cpp.o CMakeFiles/machine.cpp.dir/vector.cpp.o  -o machine.cpp -rdynamic 
+/usr/bin/c++   -std=c++14   CMakeFiles/machine.cpp.dir/string.cpp.o CMakeFiles/machine.cpp.dir/stack.cpp.o CMakeFiles/machine.cpp.dir/vector.cpp.o  -o machine.cpp -rdynamic 

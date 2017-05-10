@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/machine.cpp.dir/stack.cpp.o"
   "CMakeFiles/machine.cpp.dir/string.cpp.o"
+  "CMakeFiles/machine.cpp.dir/stack.cpp.o"
   "CMakeFiles/machine.cpp.dir/vector.cpp.o"
   "machine.cpp.pdb"
   "machine.cpp"
