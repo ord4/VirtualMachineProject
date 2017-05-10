@@ -19,9 +19,15 @@ stdlib.h
 /home/orion/Documents/code/cs2/VirtualMachineProject/string.cpp
 string.hpp
 /home/orion/Documents/code/cs2/VirtualMachineProject/string.hpp
+iostream
+-
+cstring
+-
+string
+-
 
 /home/orion/Documents/code/cs2/VirtualMachineProject/string.hpp
-string.h
+string
 -
 iostream
 -

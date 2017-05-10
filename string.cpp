@@ -36,7 +36,7 @@ String::String(const std::string &s){
 }
 
 String::String(const char *s, int size){
-	length = strlen(s, size);
+	length = strlen(s);
 	str = new char[length + 1];
 	strcpy(str, s);
 }
@@ -45,7 +45,7 @@ String::String(const String &s1, const String &s2){
 	length = s2.length + s1.length;
 	str = new char[length + 1];
 	strcpy(str, s1.str);
-	strcpy(srt + s1.length, s2.srt);
+	strcpy(str + s1.length, s2.str);
 }
 
 String::String(const String &s){
@@ -56,7 +56,7 @@ String::String(const String &s){
 
 String::~String(){
 	str = nullptr;
-	delete []place;
+	delete []str;
 }
 
 char& String::operator[](int i) const{
@@ -65,7 +65,7 @@ char& String::operator[](int i) const{
 
 bool operator==(const String &lhs, const String &rhs){
 	if(lhs.length == rhs.length){
-		for(int i = 0; i < rhs.size; ++i){
+		for(int i = 0; i < rhs.length; ++i){
 			if(lhs[i] != rhs[i]){
 				return false;
 			}

@@ -20,7 +20,7 @@ class String{
 		String();
 		String(const char*);
 		String(const std::string&);
-		String(char*, int);
+		String(const char*, int);
 		String(const String&, const String&);
 		String(const String&);
 
@@ -33,7 +33,7 @@ class String{
 		friend bool operator!=(const String&, const String&);
 		friend bool operator>(const String&, const String&);
 		friend bool operator<(const String&, const String&);
-		friend bool operator+(const String&, const String&);
+		friend String operator+(const String&, const String&);
 		friend std::ostream& operator<<(std::ostream&, String&);
 
 		// Setters and Getters
