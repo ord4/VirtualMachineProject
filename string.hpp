@@ -7,7 +7,7 @@
 #ifndef STRING_HPP
 #define STRING_HPP
 
-#include <string.h>
+#include <string>
 #include <iostream>
 
 class String{
@@ -16,57 +16,31 @@ class String{
 		char *str;
 
 	public:
+		// Constructors
 		String();
-		~String();
+		String(const char*);
+		String(const std::string&);
+		String(char*, int);
+		String(const String&, const String&);
 		String(const String&);
 
-		String& operator=(const String&);
-		String operator+=(const String&);
+		// Destructor
+		~String();
 
-		int getLength() const;
-		void setLength(int);
+		// Overloaded Operators
+		char& operator[](int) const;
+		friend bool operator==(const String&, const String&);
+		friend bool operator!=(const String&, const String&);
+		friend bool operator>(const String&, const String&);
+		friend bool operator<(const String&, const String&);
+		friend bool operator+(const String&, const String&);
+		friend std::ostream& operator<<(std::ostream&, String&);
+
+		// Setters and Getters
+		int getLength()const {return length;}
+		void setLength(int x){length = x;}
+		char* getStr() const{return str;}
+
+
 };
-
-String::String(){
-	setLength(1);
-	str = new char[getLength()];
-	str[0] = '\0';
-}
-
-String::String(const String &obj){
-	setLength(obj.getLength());
-	str = new char[getLength() + 1];
-	strcpy(str, obj.str);
-}
-
-String& String::operator=(const String &rhs){
-	setLength(rhs.getLength());
-	char *tempStr = new char[getLength() + 1];
-	strcat(tempStr, rhs.str);
-	return *this;
-}
-
-String::~String(){
-	if(str){
-		delete []str;
-	}
-}
-
-String String::operator+=(const String& rhs){
-	setLength(rhs.getLength());
-	char *tempStr = str;
-	str = new char[getLength() + 1];
-	strcpy(str, tempStr);
-	strcat(str, rhs.str);
-	delete tempStr;
-	return *this;
-}
-
-int String::getLength() const{
-	return length;
-}
-
-void String::setLength(int val){
-	length = val;
-}
 #endif

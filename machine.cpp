@@ -176,12 +176,11 @@ Machine::add()
 {
 	int num, sum;
 
-   stack.pop(sum);
-   stack.pop(num);
-   sum += num;
+  	stack.pop(sum);
+  	stack.pop(num);
+  	sum += num;
 
-   // Push sum back onto the stack.
-   stack.push_front(sum);
+   	stack.push_front(sum);
   throw std::logic_error("not implemented");
 }
 
@@ -189,7 +188,13 @@ Machine::add()
 void
 Machine::sub()
 {
-  // TODO: Implement me!
+	int num, sum;
+
+    stack.pop(sum);
+    stack.pop(num);
+    sum -= num;
+
+    stack.push_front(sum);
   throw std::logic_error("not implemented");
 }
 
@@ -197,7 +202,13 @@ Machine::sub()
 void
 Machine::mul()
 {
-  // TODO: Implement me!
+	int num, sum;
+
+    stack.pop(sum);
+    stack.pop(num);
+    sum *= num;
+
+    stack.push_front(sum);
   throw std::logic_error("not implemented");
 }
 
@@ -205,7 +216,13 @@ Machine::mul()
 void
 Machine::div()
 {
-  // TODO: Implement me!
+	int num, sum;
+
+    stack.pop(sum);
+    stack.pop(num);
+    num /= sum;
+
+    stack.push_front(num);
   throw std::logic_error("not implemented");
 }
 
@@ -213,7 +230,13 @@ Machine::div()
 void
 Machine::rem()
 {
-  // TODO: Implement me!
+	int num, sum;
+
+    stack.pop(sum);
+    stack.pop(num);
+    num %= sum;
+
+    stack.push_front(num);
   throw std::logic_error("not implemented");
 }
 
@@ -221,15 +244,20 @@ Machine::rem()
 void
 Machine::print()
 {
-  // TODO: Implement me!
-  throw std::logic_error("not implemented");
+	int num;
+    stack.pop(num);
+    std::cout << num << '\n';
+	throw std::logic_error("not implemented");
 }
 
 
 void
 Machine::read()
 {
-  // TODO: Implement me!
+	std::cout << "Enter a number to be pushed: ";
+	int n = 0;
+	std::cin >> n;
+	stack.push_front(n);
   throw std::logic_error("not implemented");
 }
 
